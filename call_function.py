@@ -3,6 +3,7 @@ from functions.get_files_info import *
 from functions.get_file_content import *
 from functions.run_python_file import *
 from functions.write_file import *
+from config import WORKING_DIR
 
 available_functions = types.Tool(
     function_declarations=[
@@ -22,8 +23,8 @@ def call_function(function_call_part, verbose = False):
     else:
         print(f" - Calling function: {function_name}")
 
-    args["working_directory"] = "./calculator"
-
+    args["working_directory"] = WORKING_DIR
+ 
     function_map = {
             "get_files_info": get_files_info,
             "get_file_content": get_file_content,
